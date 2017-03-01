@@ -1,6 +1,5 @@
 composer install --prefer-dist
-cd vendor/victoire/victoire/
-cp Tests/Functionnal/app/config/parameters.yml.dist Tests/Functionnal/app/config/parameters.yml
+(cd vendor/victoire/victoire/; cp Tests/Functionnal/app/config/parameters.yml.dist Tests/Functionnal/app/config/parameters.yml)
 echo "memory_limit = 2048M" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/memory.ini
 echo "always_populate_raw_post_data=-1" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/post_data.ini
 >
@@ -16,6 +15,7 @@ if [ -z "${RUN_NIGHTLY_BUILD}" ]; then
 fi
 npm install less
 mkdir fails
+composer install --prefer-dist
 bower install
 php Tests/Functionnal/bin/console --env=ci doctrine:database:create --no-debug
 php Tests/Functionnal/bin/console --env=ci doctrine:schema:create --no-debug
