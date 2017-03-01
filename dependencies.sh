@@ -1,5 +1,6 @@
 composer install --prefer-dist
-cp vendor/victoire/victoire/Tests/Functionnal/app/config/parameters.yml.dist vendor/victoire/victoire/Tests/Functionnal/app/config/parameters.yml
+cd vendor/victoire/victoire/
+cp Tests/Functionnal/app/config/parameters.yml.dist Tests/Functionnal/app/config/parameters.yml
 echo "memory_limit = 2048M" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/memory.ini
 echo "always_populate_raw_post_data=-1" > ~/.phpenv/versions/$(phpenv global)/etc/conf.d/post_data.ini
 >
