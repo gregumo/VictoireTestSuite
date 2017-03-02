@@ -3,12 +3,10 @@ cd vendor/victoire/victoire/
 cp Tests/Functionnal/app/config/parameters.yml.dist Tests/Functionnal/app/config/parameters.yml
 echo "memory_limit = 2048M" > /opt/circleci/php/$(phpenv global)/etc/conf.d/memory.ini
 echo "always_populate_raw_post_data=-1" > /opt/circleci/php/$(phpenv global)/etc/conf.d/post_data.ini
->
 if [ -n "${RUN_NIGHTLY_BUILD}" ]; then
   sed -i 's/^;//' /opt/circleci/php/$(phpenv global)/etc/conf.d/xdebug.ini
   echo "xdebug enabled"
 fi
->
 if [ -z "${RUN_NIGHTLY_BUILD}" ]; then
   sed -i '/CoverageContext/d' behat.yml
   sed -i '/CoverageContext/d' behat.yml.dist
