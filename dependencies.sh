@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 = "widget" ]; then
+if [ $1 = *"widget"* ]; then
     composer install --prefer-dist
     cd vendor/victoire/victoire/
 fi
@@ -20,6 +20,12 @@ fi
 npm install less
 mkdir fails
 composer install --prefer-dist
+
+if [ $1 = *"widget"* ]; then
+    revision=$(cd ../../../ | git rev-parse HEAD)
+    composer require friendsofvictoire/$1#$revision
+fi
+
 bower install
 php Tests/Functionnal/bin/console --env=ci doctrine:database:create --no-debug
 php Tests/Functionnal/bin/console --env=ci doctrine:schema:create --no-debug
