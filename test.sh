@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $1 == *"widget"* ]; then
+if [[ $var == *"widget"* ]]; then
     composer install --prefer-dist
     cd vendor/victoire/victoire/
 fi
