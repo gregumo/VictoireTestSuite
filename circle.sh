@@ -6,7 +6,7 @@
 
 declare -a path
 
-if [ $1 = *"widget"* ]; then
+if [ $1 == *"widget"* ]; then
     path=Tests/Features/CurrentWidget
     mkdir vendor/victoire/victoire/$path
     cp -r Tests/Features/* vendor/victoire/victoire/$path
