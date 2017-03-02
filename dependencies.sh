@@ -26,8 +26,8 @@ php Tests/Functionnal/bin/console --env=ci bazinga:js-translation:dump --no-debu
 php Tests/Functionnal/bin/console --env=ci fos:js:dump --target="Tests/Functionnal/web/js/fos_js_routes_test.js" --no-debug
 php Tests/Functionnal/bin/console --env=domain fos:js:dump --target="Tests/Functionnal/web/js/fos_js_routes_domain.js" --no-debug
 php Tests/Functionnal/bin/console --env=ci assetic:dump --no-debug
-wget http://selenium-release.storage.googleapis.com/3.1/selenium-server-standalone-3.1.0.jar
-nohup java -jar selenium-server-standalone-3.1.0.jar > /dev/null 2>&1 &
+wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
+nohup java -jar selenium-server-standalone-2.53.1.jar > /dev/null 2>&1 &
 nohup php Tests/Functionnal/bin/console --env=ci server:run -r Tests/Functionnal/app/config/router_ci.php --no-debug > server.log 2>&1 &
 nohup Xvfb :99 -ac 2>/dev/null &
 sleep 3
