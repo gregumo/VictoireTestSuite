@@ -30,4 +30,4 @@ wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standal
 nohup java -jar selenium-server-standalone-2.53.0.jar > /dev/null 2>&1 &
 nohup php Tests/Functionnal/bin/console --env=ci server:run -r Tests/Functionnal/app/config/router_ci.php --no-debug > server.log 2>&1 &
 nohup Xvfb :99 -ac 2>/dev/null &
-sleep 3 # give xvfb some time to start
+sleep 3
